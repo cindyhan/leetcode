@@ -4,7 +4,8 @@
 """
 27.py
 author: cindyhan 2024/9/6
-手动移动指针
+27. 移除元素
+思路：手动移动指针
 
 """
 
@@ -23,6 +24,7 @@ class Solution:
         k = len(nums)
         return k
 
+    # 双指针解法
     def removeElement1(self, nums, val: int) -> int:
         n = len(nums)
         left = right = 0
