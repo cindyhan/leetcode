@@ -19,7 +19,7 @@ class ListNode:
 
 class Solution:
     def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
-        dummy = ListNode(0) # 可以是任意值，因为用不到
+        dummy = ListNode(0)  # 可以是任意值，因为用不到
         dummy.next = head
         current = dummy
 
@@ -32,7 +32,7 @@ class Solution:
         return dummy.next
 
     def removeElements1(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
-        dummy = ListNode(0) # 可以是任意值，因为用不到
+        dummy = ListNode(0)  # 可以是任意值，因为用不到
         dummy.next = head
         current = dummy
         while head:
