@@ -20,7 +20,9 @@ author: cindyhan 2024/12/17
 
 """
 
+
 class Solution(object):
+    # set解法
     def containsDuplicate(self, nums):
         """
         :type nums: List[int]
@@ -32,6 +34,7 @@ class Solution(object):
         else:
             return True
 
+    # hash解法
     def containsDuplicate1(self, nums):
         """
         :type nums: List[int]
@@ -43,14 +46,18 @@ class Solution(object):
                 return True
             else:
                 nums_map[i] = 1
+
         return False
 
 
-nums = [1,2,3,1]
-print(Solution().containsDuplicate(nums)) # True
+nums = [1, 2, 3, 1]
+print(Solution().containsDuplicate(nums))  # True
+print(Solution().containsDuplicate1(nums))  # True
 
-nums = [1,2,3,4]
-print(Solution().containsDuplicate(nums)) # False
+nums = [1, 2, 3, 4]
+print(Solution().containsDuplicate(nums))  # False
+print(Solution().containsDuplicate1(nums))  # False
 
-nums = [1,1,1,3,3,4,3,2,4,2]
-print(Solution().containsDuplicate(nums)) # True
+nums = [1, 1, 1, 3, 3, 4, 3, 2, 4, 2]
+print(Solution().containsDuplicate(nums))  # True
+print(Solution().containsDuplicate1(nums))  # True
