@@ -36,30 +36,33 @@ class Solution:
         s_map = {}
 
         for char in s:
-            s_map[char] = 1
+            if char in s_map:
+                s_map[char] += 1
+            else:
+                s_map[char] = 1
 
         for char in t:
             if char not in s_map:
                 res = char
                 break
+            else:
+                s_map[char] -= 1
+                if s_map[char] < 0:
+                    res = char
+                    break
 
         return res
-
-    # set解法
-    def findTheDifference1(self, s: str, t: str) -> str:
-        s_set = set(s)
-        t_set = set(t)
-
-        return t_set.difference(s_set).pop()
 
 
 obj = Solution()
 s = "abcd"
 t = "abcde"
 print(obj.findTheDifference(s, t))
-print(obj.findTheDifference1(s, t))
 
 s = ""
 t = "y"
 print(obj.findTheDifference(s, t))
-print(obj.findTheDifference1(s, t))
+
+s = "a"
+t = "aa"
+print(obj.findTheDifference(s, t))
